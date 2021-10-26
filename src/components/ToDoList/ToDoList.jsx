@@ -1,6 +1,7 @@
-import {ErrorMessage, Field, Form, Formik} from 'formik';
-import {useState} from 'react';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { useState } from 'react';
 import { TODO_SCHEMA } from '../../utils/validationSchema';
+import TaskList from '../TaskList';
 import styles from './style.module.scss';
 
 const startFormValue = {
@@ -43,17 +44,7 @@ function ToDoList() {
                     <button className={styles.toDoList_confirmButton} type="submit">Submit</button>
                 </Form>
             </Formik>
-            <ul className={styles.toDoList_taskList}>
-                {tasks.map(item =>
-                    <li key={item.id} className={styles.toDoList_tasks}>
-                        <label>
-                            <input type="checkbox" checked={item.isDone} onChange={() => toggleCompletion(item.id)}/>
-                            <span>{item.body}</span>
-                        </label>
-                        <button onClick={() => deleteTask(item.id)} type="button">X</button>
-                    </li>
-                )}
-            </ul>
+            <TaskList listOfTasks={tasks} toggleCompletion={toggleCompletion} deleteTask={deleteTask}/>
         </div>
     );
 }

@@ -16,15 +16,4 @@
     &_confirmButton {
         margin-top: 10px;
     }
-
-    &_taskList {
-        width: 50%;
-        padding: 0;
-    }
-    
-    &_tasks {
-        display: flex;
-        justify-content: space-between;
-        list-style-type: none;
-    }
 }

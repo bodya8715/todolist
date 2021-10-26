@@ -1,0 +1,16 @@
+.toDoList {
+    &_taskList {
+        width: 100%;
+        padding: 0;
+    }
+    
+    &_tasks {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+    }
+
+    &_taskLabel {
+        width: 100%;
+    }
+}
